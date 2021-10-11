@@ -1,0 +1,89 @@
+<nav>
+  <ul class="nav justify-content end">
+    <li class="nav-item">
+      <a class="nav-link active" href="">
+        <img src="/img/bandiera.jpg" width="60" height="50" alt="">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/admin/cadastro">Cadastrar Projetos</a>
+    </li>
+    <li class="nav-item">
+      {{#each GridUsuario}}
+      <a class="nav-link active">Olá, {{nomeUsuario}}</a>
+      {{/each}}
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/"><span class="material-icons-outlined md-36">logout</span></a>
+    </li>
+  </ul>
+</nav>
+<main>
+  <h1>Tarefas Cadastradas</h1>
+  <div class="container">
+    <div class="container-img">
+      <img src="/img/cad.png" alt="">
+    </div>
+    <form action="/admin/filtrar-projetos" method="POST" class="formulario" class="align-self-center">
+      <div class="button-date">
+        <h3>Deseja filtrar algum projeto?</h3><br>
+        <h2>Selecione a data no qual deseja filtrar o projeto cadastrado</h2>
+        <input name="date" id="date" type="date">
+      </div>
+      <div class="buttons">
+        <a href="/admin/filtrar-projetos"><button type="submit" id="buton-filtrar" value="{{filterProjeto.periodo}}"
+            class="btn btn-secondary btn-lg">Filtrar</button></a>
+      </div>
+    </form>
+  </div>
+  <div class="grid">
+    <table id="myTable" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Projeto</th>
+          <th scope="col">Tarefa</th>
+          <th scope="col">Link das tarefas</th>
+          <th scope="col">Periodo</th>
+          <th scope="col-2" colspan="3">Opção</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          {{#each filterProjeto}}
+            <td>{{usuario}}</td>
+            <td>{{projeto}}</td>
+            <td>{{tarefa}}</td>
+            <td>{{link}}</td>
+            <td>{{#formatDate periodo}}{{/formatDate}}</td>
+            {{!-- <td><i class="fas fa-trash-alt"></i></td> --}}
+            <td>{{!-- <a href="/deletar/{{id}}"> --}}<span class="material-icons-outlined" type="button" value="{{id}}"
+                  onclick="deletarProjeto({{id}})" id="buton-delete">delete</span></a></td>
+            <td>
+              <a href="/admin/edit-projeto/{{id}}"><span class="material-icons-outlined" type="button" value="{{id}}"
+                  id="button-edit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                  data-whatever="@mdo">edit</span></a>
+            </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>
+<script>
+  var url = location.href;
+  var parametrosDaUrl = url.split("?")[1];
+  if (parametrosDaUrl == '#') {
+    location.reload();
+    location.href = '/admin/projetos?stop=yes';
+
+  }
+  if (!parametrosDaUrl) {
+
+    ;
+
+  }
+
+
+</script>

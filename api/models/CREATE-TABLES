@@ -1,0 +1,41 @@
+
+
+
+
+CREATE TABLE usuario (
+    matricula VARCHAR(50) NOT NULL,
+    senha VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE projeto (
+    matricula VARCHAR(11) NOT NULL,
+    nome_projeto VARCHAR(50) NOT NULL,
+    tarefa VARCHAR(255),
+    data_cadastro DATE   
+);
+
+
+CREATE TABLE periodo (
+    id_periodo VARCHAR(50) NOT NULL,
+    data_cadastro VARCHAR(50) 
+);
+https://medium.com/@rogeriothe_48115/relacionamentos-com-sequelize-guia-final-2b3baf21b2a1
+
+https://stackoverflow.com/questions/20460270/how-to-make-join-queries-using-sequelize-on-node-js
+
+https://stackoverflow.com/questions/43115151/sequelize-query-to-find-all-records-that-falls-in-between-date-range/58928449
+
+SITE DE DESIGN
+
+https://undraw.co/illustrations
+
+
+CSS animation
+
+https://newbedev.com/css-animation-and-display-none
+
+SESSION 
+https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/
+
+MANY TO MANY 
+https://sequelize.org/master/manual/advanced-many-to-many.html

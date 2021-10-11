@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    {{#if cadastro}}
+    <link rel="stylesheet" type="text/css" href="/css/{{cadastro}}">
+    {{/if}}
+
+    {{#if grid}}
+    <link rel="stylesheet" type="text/css" href="/css/{{grid}}">
+    {{/if}}
+
+    {{#if login}}
+    <link rel="stylesheet" type="text/css" href="/css/{{login}}">
+    <link rel="stylesheet" type="text/css" href="/css/{{loginAnimation}}">
+    {{/if}}
+
+    {{#if projeto}}
+    <link rel="stylesheet" type="text/css" href="/css/{{projeto}}">
+    {{/if}}
+
+    {{#if editProjeto}}
+    <link rel="stylesheet" type="text/css" href="/css/{{editProjeto}}">
+    {{/if}}
+
+    {{#if filtrado}}
+    <link rel="stylesheet" type="text/css" href="/css/{{filtrado}}">
+    {{/if}}
+
+    {{#if registro}}
+    <link rel="stylesheet" type="text/css" href="/css/{{registro}}">
+    {{/if}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <title>Cadastre seu projeto aqui!</title>
+</head>
+
+<body>
+    {{{body}}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#buton-cadastrar').click(function (event) {
+            swal({
+                title: "Projeto cadastrado",
+                text: "Deseja Cadastrar um novo projeto?",
+                icon: "success",
+                buttons: ['Não', 'Cadastrar'],
+                dangerMode: true,
+            }).then((isConfirm) => {
+                if (isConfirm) {
+                    $('#formulario').submit(),
+                        Location.href = '/usuario/cadastro'
+                } else if (!isConfirm) {
+                    $('#formulario').submit(),
+                        Location.href = '/usuario/projetos'
+                }
+            });
+        });
+
+        function deletarProjeto(id) {
+            swal({
+                title: "Voce tem certeza que deseja deletar essa tarefa?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    swal("Projeto deletado com sucesso!", {
+                        icon: "success",
+                    }).then((willConfirmed) => {
+                        location.href = '/admin/del-projeto/' + id;
+                    });
+
+                } else {
+                    swal("Tarefa não deletada!");
+                }
+            })
+
+        }
+
+        $('#buton-enviar').click(function (auth) {
+            swal({
+                title: "Usuario ou senha inválidas",
+                text: "Verifique dos dados digitados",
+                icon: "warning",
+                dangerMode: true,
+            }).then((isError) => {
+                if (isError) {
+                    Location.href = '/'
+                } else {
+                    $('#formulario-login').submit(),
+                        location.href = '/usuario/cadastro';
+                }
+            });
+        });
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE></script>
+</body>
+</html>

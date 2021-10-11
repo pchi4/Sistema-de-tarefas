@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    background-color: rgb(226, 214, 201);
+    font-family: Raleway, sans-serif;
+    font-weight: bolder;
+    /* background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%); */
+}
+
+.container{
+    width: 9011px;
+    display: flex;
+    justify-content: space-around;
+    height: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgb(20, 89, 238);
+    color: #ffff;
+    box-shadow: 0 0 1em rgb(36, 34, 34);
+}
+
+
+.nav{
+    position: fixed;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: Kanit;
+    background-color: rgb(51, 50, 50);
+    padding: 10px;
+    color: #ffff;
+    font-size: 24px;
+}
+
+.formulario{
+    padding-top: 30px;
+}
+
+a { color: inherit; } 
+
+a:link {
+    text-decoration: none;
+       }
+    
+    a:hover{
+        color: yellow;
+        text-shadow: 2px 2px #0000;
+    }
+
+h1{
+    font-family: Slabo, sans-serif;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.button-date{
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+#date{
+    width: 200px;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#buton-submit{
+    width: px;
+    margin-right: 0px;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-around
+}
+
+#buton-excluir{
+    width: 250px;
+    border-radius: 50px;
+}
+
+#buton-cadastrar{
+    width: 250px;
+    border-radius: 50px;
+}
+
+#buton-filtrar{
+    width: 180px;
+    border-radius: 30px;
+}
+
+
+#buton-delete{
+    font-size: 30px;
+}
+
+#button-edit{
+    font-size: 30px;
+}
+
+#buton-delete:hover{
+    color: rgb(137, 49, 236);
+}
+#button-edit:hover{
+    color: rgb(137, 49, 236);
+}

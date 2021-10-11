@@ -1,0 +1,66 @@
+<nav>
+  <ul class="nav justify-content end">
+    <li class="nav-item">
+      <a class="nav-link active" href="">
+        <img src="/img/bandiera.jpg" width="60" height="50" alt="">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/usuario/cadastro">Cadastrar Projetos</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link active" href="/usuario/projetos?#">Projetos Cadastrados</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/usuario/logout"><span class="material-icons-outlined md-36">logout</span></a>
+    </li>
+  </ul>
+</nav>
+<main>
+  <h1>Projetos filtrados</h1>
+  <div class="container">
+    <div class="container-img">
+      <img src="/img/filtro.svg" id="img-filtro" alt="">
+    </div>
+    <form action="/filtrar-projetos" method="POST" class="formulario" class="align-self-center">
+      <div class="button-date">
+      </div>
+    </form>
+  </div>
+
+  <div class="grid">
+    <table id="myTable" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Projeto</th>
+          <th scope="col">Tarefa</th>
+          <th scope="col">Link das Tarefas</th>
+          <th scope="col">Periodo</th>
+          <th scope="col-2" colspan="3">Opção</th>
+        </tr>
+      </thead>
+      <Tbody>
+         <tr>
+       
+        {{#each buscarProjeto}}
+          <td>{{usuario}}</td>
+          <td>{{projeto}}</td>
+          <td>{{tarefa}}</td>
+          <td>{{link}}</td>
+          <td>{{#formatDate periodo}}{{/formatDate}}</td>
+          <td><i class="fas fa-trash-alt"></i></td>
+          <td>{{!-- <a href="/del-projeto/{{id}}"> --}}<span class="material-icons-outlined" value="{{id}}"
+                onclick="deletarProjeto({{id}})" id="buton-delete" onclick="function(delete)">delete</span></a></td>
+          <td>
+            <a href="/usuario/edit-projeto/{{id}}"><span class="material-icons-outlined" value="{{id}}" type="button"
+                class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                data-whatever="@mdo">edit</span></a>
+          </td>
+      </tr>
+      {{/each}}
+      </Tbody>
+     
+    </table>
+  </div>

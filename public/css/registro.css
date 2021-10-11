@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: rgb(226, 214, 201);
+    font-family: Raleway, sans-serif;
+    font-weight: bolder;
+    /* background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%); */
+}
+
+.container{
+    width: 1500px;
+    height: 513px;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    border-radius: 40px;
+    background-color: rgb(20, 89, 238);
+    color: #ffff;
+    box-shadow: 0 0 1em rgb(36, 34, 34);
+}
+
+#container-img{
+    padding-right: 50px;
+    border-radius: 30px;
+}
+
+#img-cadastro{
+    width: 450px;
+}
+
+.nav{
+    position: fixed;
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    font-family: Kanit;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(50, 50, 51, 0.774);
+    padding: 10px;
+    color: #ffff;
+    font-size: 24px;
+}
+
+a { color: inherit; } 
+
+ li{
+    text-decoration: none;
+       }
+    
+    a:hover{
+        color: yellow;
+        text-shadow: 2px 2px #0000;
+    }
+
+h1{
+    font-family: Patua One;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 20px;
+}
+
+.formulario{
+    width: 800px;
+    font-size: 24px;
+    font-weight: 500;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+#date{
+    width: 200px;
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px;
+    margin-left: 65%;
+}
+
+#buton-submit{
+    width: px;
+    margin-right: 0px;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-around;
+    padding-top: 25px;
+}
+
+#buton-excluir{
+    width: 220px;
+    border-radius: 50px;
+}
+
+#buton-cadastrar{
+    width: 220px;
+    border-radius: 50px;
+}
+
+#logout{
+    border-radius: 20px;
+    background-color: rgb(149, 141, 141);
+    width: 100px;
+    border: none;
+}
+
+#logout:hover{
+    box-shadow: 4px 4px #ffff;
+}
+

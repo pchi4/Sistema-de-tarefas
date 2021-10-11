@@ -1,0 +1,52 @@
+<nav>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="">
+                <img src="/img/bandiera.jpg" width="60" height="50" alt="">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/admin/projetos">Projetos Cadastrados</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/admin/logout"><span class="material-icons-outlined md-36">logout</span></a>
+        </li>
+    </ul>
+</nav>
+<main>
+    <h1>Cadastros de Tarefas</h1>
+    <div class="container">
+        <form action="/admin/edit-projeto" method="POST" class="formulario" class="align-self-center">
+            <div>
+                <input name="date" value="{{#each edit}}{{date}}{{/each}}" id="date" type="date">
+            </div>
+            <p>Deposite aqui o link</p>
+            <div>
+                <input class="form-control row" type="text">
+            </div>
+            <div class="form-group row">
+                <p>Selecione os Projetos</p>
+                <select class="form-control" id="projeto" name="projeto">
+                    <option selected value="{{#each edit}}{{projeto}}{{/each}}">{{#each edit}}{{projeto}}{{/each}}
+                    </option>
+                    <option name="projeto" value="Projeto Sigip">Projeto Sigip</option>
+                    <option name="projeto" value="Projeto Sentinela">Projeto Sentinela</option>
+                    <option name="projeto" value="Projeto SGE">Projeto SGE</option>
+                    <option name="projeto" value="Projeto Hydra">Projeto Hydra</option>
+                    <option name="projeto" value="Projeto Mop">Projeto Mop</option>
+                </select>
+            </div>
+            <div class="form-group row">
+                <label for="exampleFormControlTextarea1">Tarefas</label>
+                <textarea name="tarefa" id="tarefa" value="{{tarefa}}" class="form-control"
+                    id="exampleFormControlTextarea1" rows="3">{{#each edit}}{{tarefa}}{{/each}}</textarea>
+            </div>
+            <div class="buttons">
+                <button type="reset" id="buton-excluir" class="btn btn-primary btn-lg">Excluir</button>
+                <button type="submit" id="buton-editar" class="btn btn-secondary btn-lg">Editar</button>
+            </div>
+            <div>
+                <input type="hidden" id="id" name="id" value="{{#each edit}}{{id}}{{/each}}">
+            </div>
+        </form>
+    </div>

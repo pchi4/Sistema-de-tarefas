@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Vector{
+    text-align: center;
+}
+
+#Vector_6, #Vector_7, #Vector_21, #Vector_22, #Vector_23, #Vector_24, #Vector_25{
+animation: vector 2s ease-in-out infinite alternate;
+}
+
+#Vector_8, #Vector_9, #Vector_10, #Vector_11, #Vector_12, #Vector_13, #Vector_14, #Vector_15, #Vector_16,#Vector_17,#Vector_18, #Vector_19{
+    overflow: hidden;
+    transition: transform 2s;
+    animation: boneco 2s ease-in-out infinite alternate;
+}
+
+#Vector_5{
+    animation: shadow 2s ease infinite alternate;
+}
+
+@keyframes vector{
+   
+    from{
+        transform: translateZ(80px);
+    }
+
+    to {
+        transform: translateX(80px);
+    }
+}
+
+@keyframes boneco{
+
+    0%{
+        transform: translateZ(80px);
+        opacity: default;
+    }
+
+    25%{
+        transform: translateZ(80px);
+        
+    }
+    50%{
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+}
+
+
+@keyframes shadow{
+    0%{
+        transform: translateZ(80px);
+    }
+
+    100%{
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+}
