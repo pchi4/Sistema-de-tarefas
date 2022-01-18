@@ -7,3 +7,5 @@
 - [x] Handlebars,
 - [x] MongoDB,
 - [x] Bootstrap
+
+### Para inicializar o projeto você deve da o npm install  
