@@ -9,4 +9,4 @@
 - [x] MongoDB,
 - [x] Bootstrap
 
-## It's not fully finished yet.
+## It's not fully finished yet. I will try to evolve during these days.
